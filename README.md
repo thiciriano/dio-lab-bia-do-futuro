@@ -1,4 +1,4 @@
-# 🤖 MILA - Miniatura de Gastos Inteligente
+# 🤖 MILA - Minigerenciador de Gastos Inteligente
 
 **Um assistente de IA para rastrear e gerenciar aqueles pequenos gastos que se acumulam.**
 
