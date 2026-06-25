@@ -1,0 +1,39 @@
+data,hora,descricao,categoria,valor,local,notas
+2025-06-16,08:30,Café da manhã,alimentacao,8.50,Café da Esquina,Cappuccino
+2025-06-16,15:00,Café da tarde,alimentacao,5.00,Máquina de café,Café coado
+2025-06-16,19:30,Lanche,alimentacao,12.00,Padaria,Sanduíche + refrigerante
+2025-06-16,22:00,Delivery de doces,alimentacao,15.00,App de delivery,Mousse
+2025-06-17,08:00,Café,alimentacao,6.00,Café da Esquina,Café com pão
+2025-06-17,13:00,Almoço fora,alimentacao,22.00,Restaurante,PF completo
+2025-06-17,18:00,Lanche,alimentacao,8.50,Padaria,Bolo + suco
+2025-06-17,20:30,Netflix,diversao,19.90,Streaming,Assinatura
+2025-06-18,08:15,Café,alimentacao,5.50,Café da Esquina,Café simples
+2025-06-18,14:00,Snack,alimentacao,9.00,Lanchonete,Batata frita
+2025-06-18,16:30,Uber,transporte,18.00,App,Ida para home office
+2025-06-19,07:45,Café,alimentacao,6.00,Café,Cappuccino
+2025-06-19,12:00,Almoço,alimentacao,25.00,Restaurante,PF
+2025-06-19,19:00,Lanche,alimentacao,7.50,Padaria,Pão de queijo
+2025-06-19,20:00,Entrada de cinema,diversao,45.00,Cinema,Ingresso 1 pessoa
+2025-06-20,08:30,Café + bolo,alimentacao,10.00,Café,Café + bolo
+2025-06-20,15:00,Café,alimentacao,5.50,Máquina,Café
+2025-06-20,18:00,Refrigerante,alimentacao,6.00,Loja,Garrafa 2L
+2025-06-21,08:00,Café,alimentacao,5.00,Café,Café simples
+2025-06-21,12:30,Almoço,alimentacao,20.00,Restaurante,PF
+2025-06-21,16:00,Sorvete,alimentacao,12.00,Sorveteria,Picolé gourmet
+2025-06-21,20:00,Aplicativo de música,diversao,9.90,Spotify,Assinatura
+2025-06-22,08:15,Café,alimentacao,5.50,Café,Café
+2025-06-22,14:00,Bolo,alimentacao,8.00,Padaria,Fatia de bolo
+2025-06-22,19:30,Lanche,alimentacao,11.00,Lanchonete,Sanduíche
+2025-06-22,21:00,Uber,transporte,25.00,App,Volta para casa
+2025-06-23,09:00,Café + doce,alimentacao,9.00,Café,Café + doce
+2025-06-23,13:00,Almoço fora,alimentacao,18.00,Restaurante,PF
+2025-06-23,17:00,Refrigerante,alimentacao,5.50,Loja,Lata 350ml
+2025-06-23,20:30,Jogo online,diversao,29.90,Plataforma,Battle pass
+2025-06-24,08:00,Café,alimentacao,5.00,Café,Café
+2025-06-24,12:00,Almoço,alimentacao,22.00,Restaurante,PF
+2025-06-24,15:30,Lanche,alimentacao,7.00,Padaria,Bolo
+2025-06-24,18:00,Uber,transporte,16.00,App,Ida para compromisso
+2025-06-24,20:00,Pipoca,diversao,8.00,Cinema,Pipoca pequena
+2025-06-25,08:30,Café,alimentacao,6.00,Café,Cappuccino
+2025-06-25,14:00,Lanche,alimentacao,9.50,Lanchonete,Pastel
+2025-06-25,16:00,Livro digital,diversao,19.90,Plataforma,E-book

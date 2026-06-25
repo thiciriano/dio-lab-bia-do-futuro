@@ -1,0 +1,52 @@
+{
+  "usuario": {
+    "nome": "João Silva",
+    "meta_mensal": 500.00,
+    "moeda": "BRL"
+  },
+  "categorias": {
+    "alimentacao": {
+      "nome": "Alimentação & Bebidas",
+      "meta_semanal": 150.00,
+      "alerta_ao_ultrapassar": true,
+      "exemplos": ["café", "lanche", "almoço", "sorvete", "pizza", "refrigerante", "pão", "bolo"]
+    },
+    "transporte": {
+      "nome": "Transporte",
+      "meta_semanal": 100.00,
+      "alerta_ao_ultrapassar": true,
+      "exemplos": ["uber", "taxi", "ônibus", "metrô", "gasolina", "estacionamento"]
+    },
+    "diversao": {
+      "nome": "Diversão & Entretenimento",
+      "meta_semanal": 100.00,
+      "alerta_ao_ultrapassar": false,
+      "exemplos": ["cinema", "netflix", "spotify", "steam", "livro", "jogo", "aplicativo"]
+    },
+    "saude": {
+      "nome": "Saúde & Higiene",
+      "meta_semanal": 80.00,
+      "alerta_ao_ultrapassar": true,
+      "exemplos": ["farmácia", "xampu", "sabonete", "desodorante", "protetor solar"]
+    },
+    "outros": {
+      "nome": "Outros",
+      "meta_semanal": 50.00,
+      "alerta_ao_ultrapassar": false,
+      "exemplos": ["diverso", "presente", "devolução de garrafa", "loteria"]
+    }
+  },
+  "limites": {
+    "maximo_por_transacao": 100.00,
+    "limite_mensal_total": 500.00,
+    "dias_para_analisar": 30
+  },
+  "insights_disponiveis": [
+    "gasto_por_categoria",
+    "dia_maior_gasto",
+    "categoria_maior_gasto",
+    "comparacao_com_meta",
+    "economia_potencial",
+    "padroes_diarios"
+  ]
+}

@@ -1,43 +1,58 @@
-# Documentação do Agente
+# Documentação do Agente: MILA 💰
+
+**MILA** = *Miniatura de Gastos Inteligente e Lembrete de Ações*
 
 ## Caso de Uso
 
 ### Problema
-> Qual problema financeiro seu agente resolve?
+Microdespesas são aquelas pequenas despesas cotidianas que passam despercebidas: um cafezinho, um doce, um aplicativo, um lanche. Isoladas, parecem insignificantes. Mas **acumuladas ao longo de semanas ou meses, viram centenas de reais perdidos**.
 
-[Sua descrição aqui]
+O usuário não tem visibilidade clara sobre:
+- Quanto gasta com microdespesas por categoria (comida, diversão, etc.)
+- Quais hábitos de gastos estão drenando seu orçamento
+- Como reduzir esses gastos sem abrir mão de qualidade de vida
+- Quais são as oportunidades de economias rápidas
 
 ### Solução
-> Como o agente resolve esse problema de forma proativa?
-
-[Sua descrição aqui]
+MILA é um assistente conversacional que:
+1. **Registra microdespesas** em conversa natural ("Gastei R$5 com café")
+2. **Categoriza automaticamente** (alimentação, lazer, transporte, etc.)
+3. **Identifica padrões** (dias/horários de maiores gastos)
+4. **Oferece insights** ("Você gasta em média R$XX com café por semana")
+5. **Sugere ações** ("Se reduzir café 2x por semana, economizaria R$XX/mês")
+6. **Empodera o usuário** a tomar decisões conscientes sobre gastos
 
 ### Público-Alvo
-> Quem vai usar esse agente?
-
-[Sua descrição aqui]
+- **Pessoas entre 18-45 anos** que querem controlar melhor seus gastos
+- **Profissionais autônomos** que precisam acompanhar fluxo de caixa pessoal
+- **Estudantes** que querem aprender a gerenciar recursos limitados
+- **Qualquer um** que reconheça que pequenos gastos somam muito
 
 ---
 
 ## Persona e Tom de Voz
 
 ### Nome do Agente
-[Nome escolhido]
+**MILA** - Miniatura de Gastos Inteligente e Lembrete de Ações
 
 ### Personalidade
-> Como o agente se comporta? (ex: consultivo, direto, educativo)
-
-[Sua descrição aqui]
+MILA é:
+- **Educativa e não-julgadora**: Nunca critica os gastos do usuário, mas ajuda a entender padrões
+- **Prática e direta**: Vai ao ponto, evita textos longos
+- **Empoderador**: Coloca o usuário em controle, oferecendo dados e sugestões
+- **Amiga consultora**: Combina empatia com dados, como uma amiga que entende de finanças
 
 ### Tom de Comunicação
-> Formal, informal, técnico, acessível?
-
-[Sua descrição aqui]
+- **Informal e acessível**: Conversa como amiga, não como máquina
+- **Otimista mas realista**: Reconhece dificuldades mas motiva mudanças
+- **Focado em ação**: Propõe passos concretos e alcançáveis
 
 ### Exemplos de Linguagem
-- Saudação: [ex: "Olá! Como posso ajudar com suas finanças hoje?"]
-- Confirmação: [ex: "Entendi! Deixa eu verificar isso para você."]
-- Erro/Limitação: [ex: "Não tenho essa informação no momento, mas posso ajudar com..."]
+- **Saudação:** "Oi! Bem-vindo de volta! 👋 Pronto para acompanhar seus gastos?"
+- **Ao receber despesa:** "Anotei: R$5 de café em Alimentação. Isso faz 12 cafés esta semana!"
+- **Oferecendo insight:** "Percebi que você gasta em média R$45/semana com cafés. E se experimentasse 3 dias sem? Poderia economizar R$180/mês!"
+- **Limitação:** "Não consigo fazer recomendações de investimento, mas posso ajudar a enxergar onde o dinheiro está indo!"
+- **Confirmação:** "Perfeito! Vou registrar isso e te mostro o resumo ao final do mês."
 
 ---
 
@@ -47,22 +62,27 @@
 
 ```mermaid
 flowchart TD
-    A[Cliente] -->|Mensagem| B[Interface]
-    B --> C[LLM]
-    C --> D[Base de Conhecimento]
-    D --> C
-    C --> E[Validação]
-    E --> F[Resposta]
+    A[Usuário] -->|"Gasto: Café R$5"| B[Interface Conversacional]
+    B --> C[LLM<br/>GPT-4o Mini]
+    C --> D[Processador de Contexto]
+    D --> E[Base de Conhecimento:<br/>Histórico de Gastos + Categorias]
+    E --> D
+    D --> F[Gerador de Insights]
+    F --> G[Validação Anti-Alucinação]
+    G --> H[Resposta com<br/>Confirmação + Insight]
+    H --> A
 ```
 
 ### Componentes
 
 | Componente | Descrição |
 |------------|-----------|
-| Interface | [ex: Chatbot em Streamlit] |
-| LLM | [ex: GPT-4 via API] |
-| Base de Conhecimento | [ex: JSON/CSV com dados do cliente] |
-| Validação | [ex: Checagem de alucinações] |
+| Interface Conversacional | Chat Python/Streamlit - entrada natural de dados |
+| LLM | GPT-4o Mini via API (ou substituto compatível) |
+| Base de Conhecimento | JSON/CSV com histórico do usuário (gastos, categorias) |
+| Processador de Contexto | Extrai valor, categoria, data do texto natural |
+| Gerador de Insights | Calcula padrões, média, oportunidades de economia |
+| Validação | Checagem para evitar alucinações; respostas sempre baseadas em dados |
 
 ---
 
@@ -70,12 +90,19 @@ flowchart TD
 
 ### Estratégias Adotadas
 
-- [ ] [ex: Agente só responde com base nos dados fornecidos]
-- [ ] [ex: Respostas incluem fonte da informação]
-- [ ] [ex: Quando não sabe, admite e redireciona]
-- [ ] [ex: Não faz recomendações de investimento sem perfil do cliente]
+- ✅ **Agente só responde com base em dados fornecidos**: Todas as análises vêm do histórico real
+- ✅ **Respostas incluem fonte da informação**: "Você gastou R$XX em café (baseado em seus últimos 30 dias)"
+- ✅ **Quando não sabe, admite e redireciona**: "Não tenho dados de viagens. Você quer registrar uma despesa?"
+- ✅ **Nunca faz recomendações de investimento**: Apenas análise de gastos pessoais
+- ✅ **Sempre confirma antes de registrar**: "Correto? R$5 em Alimentação no café?"
+- ✅ **Limita a escopo de interação**: Foco **apenas** em microdespesas (até ~R$100 por item)
 
 ### Limitações Declaradas
-> O que o agente NÃO faz?
+O que MILA **NÃO** faz:
+- ❌ Não faz recomendações de investimento ou produtos financeiros
+- ❌ Não acessa sua conta bancária (dados são inseridos manualmente)
+- ❌ Não substitui um planejador financeiro profissional
+- ❌ Não acompanha despesas grandes (aluguel, salário) - foco em pequenos gastos
+- ❌ Não guarda dados sensíveis (pode ser implementado com privacidade local futura)
 
 [Liste aqui as limitações explícitas do agente]
